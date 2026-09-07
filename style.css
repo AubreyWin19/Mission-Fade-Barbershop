@@ -1,0 +1,767 @@
+/* =========================================================
+   MISSION FADE BARBERSHOP
+   Refined main stylesheet
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET & GLOBAL STYLES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 82px;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f5f3ef;
+  color: #1a1a1a;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* =========================================================
+   2. NAVIGATION
+   ========================================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(17, 17, 17, 0.97);
+  border-bottom: 1px solid #2d2d2d;
+}
+
+nav {
+  width: min(1200px, 100%);
+  min-height: 74px;
+  margin: 0 auto;
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+nav > a {
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+nav > a:hover {
+  color: #d5b16a;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav li a {
+  position: relative;
+  color: #d0d0d0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 1px;
+  background: #d5b16a;
+  transition: width 0.2s ease;
+}
+
+nav li a:hover {
+  color: #ffffff;
+}
+
+nav li a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   3. GENERAL SECTION STYLES
+   ========================================================= */
+
+section {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 96px 28px;
+}
+
+section > h2 {
+  margin-bottom: 14px;
+  color: #171717;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+section > h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-top: 18px;
+  background: #c49a52;
+}
+
+section > p {
+  max-width: 680px;
+  margin-bottom: 38px;
+  color: #66615b;
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   4. HERO
+   ========================================================= */
+
+#home {
+  width: 100%;
+  min-height: 680px;
+  padding: 120px max(28px, calc((100% - 1144px) / 2));
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 35%,
+      rgba(197, 154, 82, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #111111 0%,
+      #171717 55%,
+      #101010 100%
+    );
+
+  color: #ffffff;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.12),
+      transparent 55%
+    );
+
+  pointer-events: none;
+}
+
+#home h1,
+#home h2,
+#home p,
+#home > a {
+  position: relative;
+  z-index: 1;
+}
+
+#home h1 {
+  max-width: 850px;
+  margin-bottom: 16px;
+
+  color: #ffffff;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+#home h2 {
+  margin-bottom: 22px;
+  color: #d5b16a;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+#home p {
+  max-width: 650px;
+  margin-bottom: 34px;
+
+  color: #c9c9c9;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   5. BUTTON / CALL TO ACTION
+   ========================================================= */
+
+#home > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 0 27px;
+
+  background: #d5b16a;
+  color: #141414;
+
+  border: 1px solid #d5b16a;
+  border-radius: 5px;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#home > a:hover {
+  background: #e0bd78;
+  border-color: #e0bd78;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+#home > a:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   6. FOCUS STATES
+   ========================================================= */
+
+nav a:focus-visible,
+#home > a:focus-visible,
+#contact a:focus-visible {
+  outline: 2px solid #d5b16a;
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   7. SERVICES
+   ========================================================= */
+
+#services {
+  background: #f5f3ef;
+}
+
+#services > p {
+  margin-bottom: 42px;
+}
+
+#services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+#services > h2,
+#services > p {
+  grid-column: 1 / -1;
+}
+
+#services article {
+  min-height: 205px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #ffffff;
+  border: 1px solid #e5e0d8;
+  border-radius: 7px;
+
+  box-shadow: 0 4px 18px rgba(20, 20, 20, 0.035);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#services article:hover {
+  transform: translateY(-3px);
+  border-color: #d5b16a;
+  box-shadow: 0 12px 30px rgba(20, 20, 20, 0.07);
+}
+
+#services article h3 {
+  margin-bottom: 5px;
+  color: #181818;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+#services article p:first-of-type {
+  margin-bottom: 12px;
+  color: #b08743;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+#services article p:last-of-type {
+  max-width: 470px;
+  margin-bottom: 0;
+  color: #6b6863;
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   8. ABOUT
+   ========================================================= */
+
+#about {
+  background: #ffffff;
+  border-top: 1px solid #e8e5df;
+  border-bottom: 1px solid #e8e5df;
+}
+
+#about p {
+  max-width: 780px;
+  margin-bottom: 20px;
+  color: #57534e;
+  font-size: 1.03rem;
+  line-height: 1.8;
+}
+
+#about p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   9. GALLERY
+   ========================================================= */
+
+#gallery {
+  background: #f5f3ef;
+}
+
+#gallery > p {
+  margin-bottom: 40px;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+#gallery > h2,
+#gallery > p {
+  grid-column: 1 / -1;
+}
+
+#gallery figure {
+  overflow: hidden;
+  margin: 0;
+
+  background: #ffffff;
+  border: 1px solid #e4e0d9;
+  border-radius: 7px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+#gallery img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+#gallery figure:hover img {
+  transform: scale(1.025);
+}
+
+#gallery figcaption {
+  padding: 15px 18px;
+
+  color: #33302c;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   10. REVIEWS
+   ========================================================= */
+
+#reviews {
+  background: #ffffff;
+  border-top: 1px solid #e8e5df;
+}
+
+#reviews > p {
+  max-width: 720px;
+  margin-bottom: 38px;
+
+  color: #817c75;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+#reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+#reviews > h2,
+#reviews > p {
+  grid-column: 1 / -1;
+}
+
+#reviews article {
+  min-height: 200px;
+  padding: 28px;
+
+  background: #f7f5f1;
+  border: 1px solid #e6e1d9;
+  border-top: 3px solid #d5b16a;
+  border-radius: 6px;
+}
+
+#reviews article h3 {
+  margin-bottom: 15px;
+  color: #272522;
+  font-size: 0.94rem;
+  line-height: 1.4;
+}
+
+#reviews article p {
+  color: #5f5b55;
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   11. CONTACT
+   ========================================================= */
+
+#contact {
+  width: 100%;
+  max-width: none;
+  padding-left: max(28px, calc((100% - 1144px) / 2));
+  padding-right: max(28px, calc((100% - 1144px) / 2));
+
+  background: #151515;
+  color: #ffffff;
+}
+
+#contact h2,
+#contact h3 {
+  color: #ffffff;
+}
+
+#contact h2::after {
+  background: #d5b16a;
+}
+
+#contact > p {
+  color: #a9a9a9;
+}
+
+#contact address {
+  margin: 30px 0;
+  font-style: normal;
+}
+
+#contact address p {
+  margin-bottom: 20px;
+  color: #bdbdbd;
+}
+
+#contact address strong {
+  color: #ffffff;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#contact a {
+  color: #d5b16a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#contact a:hover {
+  color: #e2c17d;
+}
+
+#contact h3 {
+  margin-bottom: 13px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#contact li {
+  margin-bottom: 7px;
+  color: #bdbdbd;
+  font-size: 0.94rem;
+}
+
+#contact > p:last-child {
+  max-width: 750px;
+  margin-top: 35px;
+  margin-bottom: 0;
+  padding: 16px 18px;
+
+  color: #858585;
+  font-size: 0.82rem;
+
+  border: 1px solid #303030;
+  border-radius: 5px;
+}
+
+
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
+
+footer {
+  padding: 28px 24px;
+  background: #0c0c0c;
+  color: #777777;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   13. TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  nav {
+    min-height: 70px;
+    padding: 12px 20px;
+    gap: 20px;
+  }
+
+  nav ul {
+    gap: 18px;
+  }
+
+  nav li a {
+    font-size: 0.84rem;
+  }
+
+  section {
+    padding: 76px 20px;
+  }
+
+  #home {
+    min-height: 600px;
+    padding: 100px 20px;
+  }
+
+  #services {
+    grid-template-columns: 1fr;
+  }
+
+  #gallery {
+    grid-template-columns: 1fr;
+  }
+
+  #reviews {
+    grid-template-columns: 1fr;
+  }
+
+  #contact {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+/* =========================================================
+   14. MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  html {
+    scroll-padding-top: 120px;
+  }
+
+  nav {
+    padding: 15px 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav > a {
+    font-size: 1.05rem;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 17px;
+  }
+
+  nav li a {
+    font-size: 0.8rem;
+  }
+
+  section {
+    padding: 64px 18px;
+  }
+
+  section > h2 {
+    font-size: 2rem;
+  }
+
+  #home {
+    min-height: 560px;
+    padding: 82px 18px;
+  }
+
+  #home h1 {
+    font-size: clamp(2.7rem, 14vw, 4rem);
+    letter-spacing: -0.045em;
+  }
+
+  #home h2 {
+    font-size: 1.35rem;
+  }
+
+  #home p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  #home > a {
+    width: 100%;
+  }
+
+  #services article {
+    min-height: 180px;
+    padding: 25px;
+  }
+
+  #gallery {
+    gap: 16px;
+  }
+
+  #gallery figure {
+    border-radius: 6px;
+  }
+
+  #reviews article {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  #contact {
+    padding: 64px 18px;
+  }
+
+  footer {
+    padding: 24px 18px;
+  }
+}
+
+
+/* =========================================================
+   15. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+/* Skip link for keyboard accessibility */
+
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 20px;
+  z-index: 2000;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
